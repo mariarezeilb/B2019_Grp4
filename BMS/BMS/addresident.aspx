@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addresident.aspx.cs" Inherits="BMS.addresident" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addresident.aspx.cs" Inherits="BMS.barangaycertificates" %>
 
 <!DOCTYPE html>
 

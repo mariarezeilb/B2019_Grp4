@@ -17,7 +17,7 @@ namespace BMS
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-TIH3JDS\SQLEXPRESS;Initial Catalog=login;Integrated Security=True;"))
+            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=BALDIVICIO;Initial Catalog=login;Integrated Security=True;"))
             {
                 sqlCon.Open();
                 string query = "SELECT COUNT(1) FROM Users WHERE Username=@Username AND Password=@Password";
