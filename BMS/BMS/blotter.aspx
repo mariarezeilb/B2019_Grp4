@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="barangaycertificates.aspx.cs" Inherits="BMS.barangaycertificates" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="blotter.aspx.cs" Inherits="BMS.blotter" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Barangay Certification</title>
+    <title>SB Admin 2 - Barangay Certification</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
  <link href="~/Content/bootstrap.min.css" rel="stylesheet" />  
     <!-- Custom fonts for this template-->
@@ -42,20 +42,19 @@
                                 <div class="card-body" >
                                <Form method="post">
     
-      
+    
         <div class="container py-4">   
-            <h5 class="text-center">Barangay Certification of Barangay Hagonoy</h5>  
+            <h5 class="text-center">Blotter</h5>  
             <div class="card">  
                 <div class="card-header bg-danger">  
-                    <h6 class="card-title text-uppercase text-white">Barangay Certification</h6>  
+                    <h6 class="card-title text-uppercase text-white">Blotter</h6>  
                 </div>  
                 <div class="card-body">  
   
                     <!--ganyan muna-->
                     <div class="container py-4">  
                           
-                            
-      <div class="modal-body">  
+                            <div class="modal-body">  
     <div class="row">  
     
                     <div class="col-sm-4 col-md-4 col-xs-12">  
@@ -63,7 +62,7 @@
        
             <tr>
                 <td align="left">
-               First Name :
+               Date Today :
 
                 <p>
                 <asp:TextBox ID="TextBox1" runat="server" Width="250px"></asp:TextBox>
@@ -76,7 +75,7 @@
                      <div class="form-group">  
                   <tr>
                 <td align="center">
-              Middle Initial :
+              Name of Complainant :
 
                 <p>
                 <asp:TextBox ID="TextBox2" runat="server" Width="250px"></asp:TextBox>
@@ -89,7 +88,7 @@
                      <div class="form-group"> 
                       <tr>
                 <td align="right">
-               Lastname :
+               Age :
 
                 <p>
                 <asp:TextBox ID="TextBox3" runat="server" Width="250px"></asp:TextBox>
@@ -101,7 +100,7 @@
                      <div class="form-group"> 
                       <tr>
                 <td align="left">
-               House Number:
+               Nationality :
 
                 <p>
                 <asp:TextBox ID="TextBox4" runat="server" Width="250px"></asp:TextBox>
@@ -113,7 +112,7 @@
                      <div class="form-group"> 
                      <tr>
                 <td align="center">
-               Street:
+               Civil Status :
 
                 <p>
                 <asp:TextBox ID="TextBox5" runat="server" Width="250px"></asp:TextBox>
@@ -126,7 +125,7 @@
                      <div class="form-group"> 
                      <tr>
                 <td align="right">
-               Barangay:
+               House No# :
 
                 <p>
                 <asp:TextBox ID="TextBox6" runat="server" Width="250px"></asp:TextBox>
@@ -139,7 +138,7 @@
                      <div class="form-group"> 
                      <tr>
                 <td align="left">
-               Year of Residing:
+               Street :
 
                 <p>
                 <asp:TextBox ID="TextBox7" runat="server" Width="250px"></asp:TextBox>
@@ -152,7 +151,7 @@
                      <div class="form-group"> 
                      <tr>
                 <td align="center">
-               Purpose:
+               Barangay/Subdivision :
 
                 <p>
                 <asp:TextBox ID="TextBox8" runat="server" Width="250px"></asp:TextBox>
@@ -165,7 +164,7 @@
                      <div class="form-group"> 
                      <tr>
                 <td align="right">
-               Date Today:
+               District/Municipality :
 
                 <p>
                 <asp:TextBox ID="TextBox9" runat="server" Width="250px"></asp:TextBox>
@@ -174,11 +173,109 @@
 
                     </div>
 
-                <br />
-      <div class="modal-footer"> 
-                    <asp:Button ID="btnShow" runat="server" Text="Submit" OnClick="btnShow_OnClick" Width="100px" Height="50px" class="btn btn-primary rounded-0" />
-           <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_OnClick" Width="100px" Height="50px" class="btn btn-info rounded-0" />
+        <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               City/Province :
+
+                <p>
+                <asp:TextBox ID="TextBox10" runat="server" Width="250px"></asp:TextBox>
+                </p>
+                    </div>
             </div>
+
+            <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               Complaint :
+
+                <p>
+                <asp:TextBox ID="TextBox11" runat="server" Width="250px"></asp:TextBox>
+                </p>
+                    </div>
+
+                    </div>
+
+
+          
+
+        <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               Offender :
+
+                <p>
+                <asp:TextBox ID="TextBox12" runat="server" Width="250px"></asp:TextBox>
+                </p>
+                    </div>
+
+                    </div>
+
+          <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               Date when :
+
+                <p>
+                <asp:TextBox ID="TextBox13" runat="server" Width="250px"></asp:TextBox>
+                </p>
+                    </div>
+
+                    </div>
+
+
+        <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               Witness 1 :
+
+                <p>
+                <asp:TextBox ID="TextBox14" runat="server" Width="250px"></asp:TextBox>
+                </p>
+                    </div>
+
+                    </div>
+
+
+        <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               Witness 2 :
+
+                <p>
+                <asp:TextBox ID="TextBox15" runat="server" Width="250px"></asp:TextBox>
+                </p>
+                    </div>
+
+                    </div>
+
+
+          <div class="col-sm-4 col-md-4 col-xs-12">  
+                     <div class="form-group"> 
+                     <tr>
+                <td align="right">
+               Narrative :
+
+                <p>
+                <asp:TextBox ID="TextBox16" runat="server" Width="700px" Height="200px" Font-Bold></asp:TextBox>
+                </p>
+                    </div>
+
+                    </div>
+
+                <br />
+         <div class="modal-footer"> 
+                    <asp:Button ID="Butoon2" runat="server" Text="Submit" Width="200px" Height="50px" class="btn btn-primary rounded-0" OnClick="Butoon2_Click1"/>
+          
+            </div>
+     <br />
+                  <br />
                     <br />
                     <br />
                     <br />
@@ -206,7 +303,7 @@
             </table> 
     </div>
     </div>
-              
+                  
 
                       
                     <!-- Content Row -->

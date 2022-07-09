@@ -1,9 +1,13 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Linq;
+using System.Web;
 
-namespace BMS.Controllers
+namespace BMS.Models
 {
-    public class Location
+    public class Filter
     {
         public int ID { get; set; }
         [Required(ErrorMessage = "Please enter city name")]
@@ -13,12 +17,12 @@ namespace BMS.Controllers
         public double Latitude { get; set; }
         [Required(ErrorMessage = "Please enter city longitude ")]
         public double Longitude { get; set; }
-        public string Address { get; set; }
-        public string Occupation { get; set; }
-        public string Contact { get; set; }
-        public string Birthday { get; set; }
-        public string Sex { get; set; }
-        public string Religion { get; set; }
-        public string Status { get; set; }
+        public string FamilyMember { get; set; }
+        public DataTable DataSource { get; internal set; }
+
+        internal void DataBind()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,7 +2,6 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -20,9 +19,9 @@
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
-    <title>Residents</title> <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuVyZWwqTq86AJctzNQmhb2hmUt5M7tQE&libraries=places&v=weekly"></script>
+    <title>Update Location</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuVyZWwqTq86AJctzNQmhb2hmUt5M7tQE&libraries=places&v=weekly"></script> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuVyZWwqTq86AJctzNQmhb2hmUt5M7tQE"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <script src="~/scripts/jquery-3.6.0.min.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>
@@ -43,14 +42,12 @@
     <script src="~/js/demo/chart-area-demo.js"></script>
     <script src="~/js/demo/chart-pie-demo.js"></script>
     <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
-     
-
     <script type="text/javascript">
 
         var markers = @Html.Raw(ViewBag.Markers);
         window.onload = function () {
             var mapOptions = {
-                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),    
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
                 zoom: 15,
                 panControl: true,
                 zoomControl: true,
@@ -76,7 +73,7 @@
                 });
                 (function (marker, data) {
                     google.maps.event.addListener(marker, "click", function (e) {
-                        infoWindow.setContent(data.description);
+                        infoWindow.setContent('<a href="/Home/location">view</a>'+ data.description);
                         infoWindow.open(map, marker);
                         document.getElementById("purok").value = data.title;
                         document.getElementById("description").value = data.description;
@@ -89,16 +86,16 @@
 
                 google.maps.event.addListener(map, "click", function(event) {
                     // get lat/lon of click
-                  
+
                     var clickLat = event.latLng.lat();
                     var clickLon = event.latLng.lng();
-                   
+
                     // show in input box
                     document.getElementById("lat").value = clickLat.toFixed(6);
                     document.getElementById("lng").value = clickLon.toFixed(6);
 
                 });
-              
+
                 // adds a listener to the marker
                 // gets the coords when drag event ends
                 // then updates the input with the new coords
@@ -113,19 +110,12 @@
                 map.setCenter(marker.position);
 
                 // adds the marker on the map
-                marker.setMap(map); 
+                marker.setMap(map);
             }
+
+
         }
     </script>
-    <style>
-        #searchInput{
-            height:40px;
-            width:500px;
-            margin-top:10px;
-            font-size:20px;
-        }
-    </style
->
 </head>
 <body id="page-top">
     <form>
@@ -147,7 +137,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="~/dashboard.aspx">
+                    <a class="nav-link" href="/Home/Dashboard">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
@@ -188,7 +178,7 @@
                          data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Certificates:</h6>
-                            <a class="collapse-item" href="~/barangaycertificates.aspx">Barangay Clearance</a>
+                            <a class="collapse-item" href="utilities-color.html">Barangay Clearance</a>
                             <a class="collapse-item" href="utilities-border.html">Barangay Indigency</a>
                             <a class="collapse-item" href="utilities-animation.html">CEDULA</a>
                         </div>
@@ -338,94 +328,71 @@
                         <!-- Card Header - Dropdown -->
                         <!-- Card Body -->
                         <div class="card-body">
-    <div class="col-ml-2 col-md-15 col-xs-20">
-        @using (Html.BeginForm("Location", "Home", FormMethod.Post))
-        {
-            <div class="container py-4">
-                <h5 class="text-center">ADD RESIDENTS LOCATION ON THE MAP</h5>
-                <div class="card">
-                    <div class="card-header bg-danger">
-                        <h6 class="card-title text-uppercase text-white">BARANGAY HAGONOY</h6>
-                    </div>
+                            <div class="col-ml-2 col-md-15 col-xs-20">
+                                @using (Html.BeginForm("Update", "Home", FormMethod.Post))
+                                {
+                                    <div class="container py-4">
+                                        <h5 class="text-center">ADD RESIDENTS LOCATION ON THE MAP</h5>
+                                        <div class="card">
+                                            <div class="card-header bg-danger">
+                                                <h6 class="card-title text-uppercase text-white">BARANGAY HAGONOY</h6>
+                                            </div>
 
-                    <div class="form-row justify-content-center">
-                        <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group">
-                                <label>Residence Name:</label>
-                                <input type="text" class="form-control" placeholder="Recidence Name" name="ResidenceName" id="purok" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="form-group">
-                                <label>Latitude:</label>
-                                <input type="text" class="form-control" placeholder="lat" name="Latitude" id="lat" required="Please fill up">
+                                            <div class="form-row justify-content-center">
+                                                <div class="form-group">
+                                                    <asp:Label ID="ID" runat="server" />
+                                                    <asp:HiddenField ID="ID" runat="server" />
 
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="form-group">
-                                <label>Longitude:</label>
-                                <input type="text" class="form-control" placeholder="lng" name="Longitude" id="lng" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group">
-                                <label>Address:</label>
-                                <input type="text" class="form-control" placeholder="Address" name="Address" id="Address" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="form-group">
-                                <label>Occupation:</label>
-                                <input type="text" class="form-control" placeholder="Occupation" name="Occupation" id="purok" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="form-group">
-                                <label>Contact Number:</label>
-                                <input type="text" class="form-control" placeholder="Contact Number" name="Contact" id="Contact" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group">
-                                <label>Sex:</label>
-                                <input type="text" class="form-control" placeholder="Sex" name="Sex" id="Contact" required="Please fill up">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="form-group">
-                                <label>Religion:</label>
-                                <input type="text" class="form-control" placeholder="Religion" name="Religion" id="Contact" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-3 col-xs-12">
-                            <div class="form-group">
-                                <label>Civil Status:</label>
-                                <input type="text" class="form-control" placeholder="Civil Status" name="Status" id="Contact" required="Please fill up">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-lg-offset-4">
-                            <div class="form-group">
-                                <label for="birthday">Birthday:</label>
-                                <input type="date" id="birthday" name="Birthday">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a type="button" class="btn btn-danger rounded-0" href="/Home/Update">Delete</a>
-                    <a type="button" class="btn btn-info rounded-0" href="/Home/Update">Update</a>
-                    <button class="btn btn-primary rounded-0">Submit</button>
-                </div>
-                            <div id="dvMap" class="card" style="width: 100%; height: 500px">
-                            </div>
-                                        <!-- Display geolocation data -->
+                                                </div>
+                                                <div class="col-lg-4 col-lg-offset-4">
+                                                    <div class="form-group">
+                                                        <label>Residence Name:</label>
+                                                        <input type="text" class="form-control" placeholder="Residence Name" name="ResidenceName" id="purok" required="Please fill up">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Latitude:</label>
+                                                        <input type="text" class="form-control" placeholder="lat" name="Latitude" id="lat" required="Please fill up">
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Longitude:</label>
+                                                        <input type="text" class="form-control" placeholder="lng" name="Longitude" id="lng" required="Please fill up">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row justify-content-center">
+                                                <div class="col-sm-12 col-md-10 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Family member:</label>
+                                                        <textarea name="FamilyMember" rows="5" class="form-control" id="description" required="Please fill up"></textarea>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button class="btn btn-primary rounded-0">Update</button>
+                                        </div>
+                                        <br />
+                                        Search :
+                                        <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                                        <br />
+                                        Note : You Can Search Using KO Code or CSP Location Name
+                                        <br />
+                                        <div id="dvMap" class="card" style="width: 100%; height: 500px">
+                                        </div>
+
 
                                     </div>
-        }
+                                }
                             </div>
-                            </div>
+                        </div>
                     </div>
                     <footer class="sticky-footer bg-white">
                         <div class="container my-auto">
@@ -437,37 +404,37 @@
                     <!-- End of Footer -->
 
                 </div>
-                        <!-- End of Content Wrapper -->
+                <!-- End of Content Wrapper -->
 
-                    </div>
-                    <!-- End of Page Wrapper -->
-                    <!-- Scroll to Top Button-->
-                    <a class="scroll-to-top rounded" href="#page-top">
-                        <i class="fas fa-angle-up"></i>
-                    </a>
+            </div>
+            <!-- End of Page Wrapper -->
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
 
-                    <!-- Logout Modal-->
-                    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                    <a class="btn btn-primary" href="login.html">Logout</a>
-                                </div>
-                            </div>
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Bootstrap core JavaScript-->
+            <!-- Bootstrap core JavaScript-->
 
-</form>
+    </form>
 </body>
 </html>  

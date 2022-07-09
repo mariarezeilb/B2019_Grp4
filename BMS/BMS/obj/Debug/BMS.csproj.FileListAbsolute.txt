@@ -40,45 +40,5 @@ D:\VS 2015\BMS\BMS\bin\System.Web.Razor.xml
 D:\VS 2015\BMS\BMS\bin\System.Web.WebPages.xml
 D:\VS 2015\BMS\BMS\bin\System.Web.WebPages.Deployment.xml
 D:\VS 2015\BMS\BMS\bin\System.Web.WebPages.Razor.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\csc.exe
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\vbc.exe
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\VBCSCompiler.exe
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\BMS.dll.config
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\BMS.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\BMS.pdb
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Antlr3.Runtime.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Dapper.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Newtonsoft.Json.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Helpers.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Mvc.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Optimization.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Razor.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.WebPages.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.WebPages.Razor.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\WebGrease.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Antlr3.Runtime.pdb
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Dapper.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\Newtonsoft.Json.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Helpers.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Mvc.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Optimization.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.Razor.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.WebPages.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\bin\System.Web.WebPages.Razor.xml
-C:\Users\Win10\Documents\Github2\BMS\BMS\obj\Debug\BMS.csprojResolveAssemblyReference.cache
-C:\Users\Win10\Documents\Github2\BMS\BMS\obj\Debug\BMS.dll
-C:\Users\Win10\Documents\Github2\BMS\BMS\obj\Debug\BMS.pdb
+D:\VS 2015\BMS\BMS\bin\itextsharp.dll
+D:\VS 2015\BMS\BMS\bin\itextsharp.xml

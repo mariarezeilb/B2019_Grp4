@@ -1,9 +1,12 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
-namespace BMS.Controllers
+namespace BMS.Models
 {
-    public class Location
+    public class Update
     {
         public int ID { get; set; }
         [Required(ErrorMessage = "Please enter city name")]
